@@ -1,0 +1,1143 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>final</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-11-20"><meta name="DC.source" content="final.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">function</span> varargout = final(varargin)
+<span class="comment">% FINAL MATLAB code for final.fig</span>
+<span class="comment">%      FINAL, by itself, creates a new FINAL or raises the existing</span>
+<span class="comment">%      singleton*.</span>
+<span class="comment">%</span>
+<span class="comment">%      H = FINAL returns the handle to a new FINAL or the handle to</span>
+<span class="comment">%      the existing singleton*.</span>
+<span class="comment">%</span>
+<span class="comment">%      FINAL('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+<span class="comment">%      function named CALLBACK in FINAL.M with the given input arguments.</span>
+<span class="comment">%</span>
+<span class="comment">%      FINAL('Property','Value',...) creates a new FINAL or raises the</span>
+<span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+<span class="comment">%      applied to the GUI before final_OpeningFcn gets called.  An</span>
+<span class="comment">%      unrecognized property name or invalid value makes property application</span>
+<span class="comment">%      stop.  All inputs are passed to final_OpeningFcn via varargin.</span>
+<span class="comment">%</span>
+<span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one</span>
+<span class="comment">%      instance to run (singleton)".</span>
+<span class="comment">%</span>
+<span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+
+<span class="comment">% Edit the above text to modify the response to help final</span>
+
+<span class="comment">% Last Modified by GUIDE v2.5 20-Nov-2018 23:05:41</span>
+
+<span class="comment">% Begin initialization code - DO NOT EDIT</span>
+gui_Singleton = 1;
+gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+                   <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+                   <span class="string">'gui_OpeningFcn'</span>, @final_OpeningFcn, <span class="keyword">...</span>
+                   <span class="string">'gui_OutputFcn'</span>,  @final_OutputFcn, <span class="keyword">...</span>
+                   <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+                   <span class="string">'gui_Callback'</span>,   []);
+<span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+<span class="keyword">else</span>
+    gui_mainfcn(gui_State, varargin{:});
+<span class="keyword">end</span>
+<span class="comment">% End initialization code - DO NOT EDIT</span>
+
+
+<span class="comment">% --- Executes just before final is made visible.</span>
+<span class="keyword">function</span> final_OpeningFcn(hObject, eventdata, handles, varargin)
+<span class="comment">% This function has no output args, see OutputFcn.</span>
+<span class="comment">% hObject    handle to figure</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+<span class="comment">% varargin   command line arguments to final (see VARARGIN)</span>
+
+<span class="comment">% Choose default command line output for final</span>
+handles.output = hObject;
+
+<span class="comment">% Update handles structure</span>
+guidata(hObject, handles);
+set(gcf,<span class="string">'color'</span>,<span class="string">'k'</span>)
+<span class="comment">% UIWAIT makes final wait for user response (see UIRESUME)</span>
+<span class="comment">% uiwait(handles.figure1);</span>
+
+
+<span class="comment">% --- Outputs from this function are returned to the command line.</span>
+<span class="keyword">function</span> varargout = final_OutputFcn(hObject, eventdata, handles)
+<span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+<span class="comment">% hObject    handle to figure</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Get default command line output from handles structure</span>
+varargout{1} = handles.output;
+
+
+<span class="comment">% --- Executes on button press in start.</span>
+<span class="keyword">function</span> start_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to start (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+finalstuff(handles)
+
+<span class="comment">% --- Executes on button press in scramble.</span>
+<span class="keyword">function</span> scramble_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to scramble (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+scramble
+
+<span class="comment">% --- Executes on button press in undo.</span>
+<span class="keyword">function</span> undo_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to undo (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+rotate(handles)
+
+
+<span class="keyword">function</span> enter_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to enter (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of enter as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of enter as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> enter_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to enter (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+<span class="comment">% --- Executes on button press in undo2.</span>
+<span class="keyword">function</span> undo2_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to undo2 (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+rotateoff(handles)
+
+
+<span class="comment">% --- Executes on button press in R.</span>
+<span class="keyword">function</span> R_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to R (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+right
+
+<span class="comment">% --- Executes on button press in Rp.</span>
+<span class="keyword">function</span> Rp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Rp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+rightp
+
+<span class="comment">% --- Executes on button press in L.</span>
+<span class="keyword">function</span> L_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to L (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+left
+
+<span class="comment">% --- Executes on button press in Lp.</span>
+<span class="keyword">function</span> Lp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Lp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+leftp
+
+<span class="comment">% --- Executes on button press in F.</span>
+<span class="keyword">function</span> F_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to F (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+front
+
+<span class="comment">% --- Executes on button press in Fp.</span>
+<span class="keyword">function</span> Fp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Fp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+frontp
+
+<span class="comment">% --- Executes on button press in B.</span>
+<span class="keyword">function</span> B_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to B (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+back
+
+<span class="comment">% --- Executes on button press in Bp.</span>
+<span class="keyword">function</span> Bp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Bp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+backp
+
+<span class="comment">% --- Executes on button press in U.</span>
+<span class="keyword">function</span> U_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to U (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+top
+
+<span class="comment">% --- Executes on button press in Up.</span>
+<span class="keyword">function</span> Up_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Up (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+topp
+
+<span class="comment">% --- Executes on button press in D.</span>
+<span class="keyword">function</span> D_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to D (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+bottom
+
+<span class="comment">% --- Executes on button press in Dp.</span>
+<span class="keyword">function</span> Dp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Dp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+bottomp
+
+
+
+<span class="keyword">function</span> colon_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to colon (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of colon as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of colon as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> colon_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to colon (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+<span class="comment">% --- Executes on button press in timer.</span>
+<span class="keyword">function</span> timer_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to timer (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+timerhj(handles)
+
+
+<span class="comment">% --- Executes on button press in stoptimer.</span>
+<span class="keyword">function</span> stoptimer_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to stoptimer (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+stoptimerhj(handles)
+
+
+<span class="comment">% --- Executes on button press in threebythree.</span>
+<span class="keyword">function</span> threebythree_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to threebythree (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobytwo(handles)
+
+<span class="comment">% --- Executes on button press in tf.</span>
+<span class="keyword">function</span> tf_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tf (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twofront
+
+<span class="comment">% --- Executes on button press in tfh.</span>
+<span class="keyword">function</span> tfh_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tfh (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twofronth
+
+<span class="comment">% --- Executes on button press in tfho.</span>
+<span class="keyword">function</span> tfho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tfho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twofrontho
+
+<span class="comment">% --- Executes on button press in tfp.</span>
+<span class="keyword">function</span> tfp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tfp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twofrontp
+
+<span class="comment">% --- Executes on button press in tfph.</span>
+<span class="keyword">function</span> tfph_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tfph (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twofrontph
+
+<span class="comment">% --- Executes on button press in tfpho.</span>
+<span class="keyword">function</span> tfpho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tfpho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twofrontpho
+
+<span class="comment">% --- Executes on button press in tb.</span>
+<span class="keyword">function</span> tb_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tb (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoback
+
+
+<span class="comment">% --- Executes on button press in tbh.</span>
+<span class="keyword">function</span> tbh_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tbh (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobackh
+
+<span class="comment">% --- Executes on button press in tbho.</span>
+<span class="keyword">function</span> tbho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tbho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobackho
+
+<span class="comment">% --- Executes on button press in tbp.</span>
+<span class="keyword">function</span> tbp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tbp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobackp
+
+<span class="comment">% --- Executes on button press in tbph.</span>
+<span class="keyword">function</span> tbph_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tbph (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobackph
+
+<span class="comment">% --- Executes on button press in tbpho.</span>
+<span class="keyword">function</span> tbpho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tbpho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobackpho
+
+<span class="comment">% --- Executes on button press in tr.</span>
+<span class="keyword">function</span> tr_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tr (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+tworight
+
+<span class="comment">% --- Executes on button press in trh.</span>
+<span class="keyword">function</span> trh_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to trh (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+tworighth
+
+<span class="comment">% --- Executes on button press in trho.</span>
+<span class="keyword">function</span> trho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to trho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+tworightho
+
+<span class="comment">% --- Executes on button press in trp.</span>
+<span class="keyword">function</span> trp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to trp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+tworightp
+
+<span class="comment">% --- Executes on button press in trph.</span>
+<span class="keyword">function</span> trph_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to trph (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+tworightph
+
+<span class="comment">% --- Executes on button press in trpho.</span>
+<span class="keyword">function</span> trpho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to trpho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+tworightpho
+
+
+<span class="comment">% --- Executes on button press in tl.</span>
+<span class="keyword">function</span> tl_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tl (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoleft
+
+<span class="comment">% --- Executes on button press in tlh.</span>
+<span class="keyword">function</span> tlh_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tlh (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twolefth
+
+<span class="comment">% --- Executes on button press in tlho.</span>
+<span class="keyword">function</span> tlho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tlho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoleftho
+
+<span class="comment">% --- Executes on button press in tlp.</span>
+<span class="keyword">function</span> tlp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tlp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoleftp
+
+<span class="comment">% --- Executes on button press in tlph.</span>
+<span class="keyword">function</span> tlph_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tlph (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoleftph
+
+<span class="comment">% --- Executes on button press in tlpho.</span>
+<span class="keyword">function</span> tlpho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tlpho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoleftpho
+
+<span class="comment">% --- Executes on button press in tu.</span>
+<span class="keyword">function</span> tu_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tu (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twotop
+
+<span class="comment">% --- Executes on button press in tuh.</span>
+<span class="keyword">function</span> tuh_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tuh (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twotoph
+
+<span class="comment">% --- Executes on button press in tuho.</span>
+<span class="keyword">function</span> tuho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tuho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twotopho
+
+<span class="comment">% --- Executes on button press in tup.</span>
+<span class="keyword">function</span> tup_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tup (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twotopp
+
+<span class="comment">% --- Executes on button press in tuph.</span>
+<span class="keyword">function</span> tuph_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tuph (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twotopph
+
+<span class="comment">% --- Executes on button press in tupho.</span>
+<span class="keyword">function</span> tupho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tupho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twotoppho
+
+<span class="comment">% --- Executes on button press in td.</span>
+<span class="keyword">function</span> td_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to td (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobottom
+
+<span class="comment">% --- Executes on button press in tdh.</span>
+<span class="keyword">function</span> tdh_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tdh (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobottomh
+
+<span class="comment">% --- Executes on button press in tdho.</span>
+<span class="keyword">function</span> tdho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tdho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobottomho
+
+<span class="comment">% --- Executes on button press in tdp.</span>
+<span class="keyword">function</span> tdp_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tdp (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobottomp
+
+<span class="comment">% --- Executes on button press in tdph.</span>
+<span class="keyword">function</span> tdph_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tdph (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobottomph
+
+<span class="comment">% --- Executes on button press in tdpho.</span>
+<span class="keyword">function</span> tdpho_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to tdpho (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobottompho
+
+
+<span class="comment">% --- Executes on button press in twoscramble.</span>
+<span class="keyword">function</span> twoscramble_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to twoscramble (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twoscramble
+
+
+<span class="comment">% --- Executes on button press in twobytwo.</span>
+<span class="keyword">function</span> twobytwo_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to twobytwo (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+twobytwo(handles)
+
+
+<span class="comment">% --- Executes on button press in threebythreee.</span>
+<span class="keyword">function</span> threebythreee_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to threebythreee (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+finalstuff(handles)
+</pre><img vspace="5" hspace="5" src="final_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+function varargout = final(varargin)
+% FINAL MATLAB code for final.fig
+%      FINAL, by itself, creates a new FINAL or raises the existing
+%      singleton*.
+%
+%      H = FINAL returns the handle to a new FINAL or the handle to
+%      the existing singleton*.
+%
+%      FINAL('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in FINAL.M with the given input arguments.
+%
+%      FINAL('Property','Value',...) creates a new FINAL or raises the
+%      existing singleton*.  Starting from the left, property value pairs are
+%      applied to the GUI before final_OpeningFcn gets called.  An
+%      unrecognized property name or invalid value makes property application
+%      stop.  All inputs are passed to final_OpeningFcn via varargin.
+%
+%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
+%      instance to run (singleton)".
+%
+% See also: GUIDE, GUIDATA, GUIHANDLES
+
+% Edit the above text to modify the response to help final
+
+% Last Modified by GUIDE v2.5 20-Nov-2018 23:05:41
+
+% Begin initialization code - DO NOT EDIT
+gui_Singleton = 1;
+gui_State = struct('gui_Name',       mfilename, ...
+                   'gui_Singleton',  gui_Singleton, ...
+                   'gui_OpeningFcn', @final_OpeningFcn, ...
+                   'gui_OutputFcn',  @final_OutputFcn, ...
+                   'gui_LayoutFcn',  [] , ...
+                   'gui_Callback',   []);
+if nargin && ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+end
+
+if nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+else
+    gui_mainfcn(gui_State, varargin{:});
+end
+% End initialization code - DO NOT EDIT
+
+
+% REPLACE_WITH_DASH_DASH- Executes just before final is made visible.
+function final_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to final (see VARARGIN)
+
+% Choose default command line output for final
+handles.output = hObject;
+
+% Update handles structure
+guidata(hObject, handles);
+set(gcf,'color','k')
+% UIWAIT makes final wait for user response (see UIRESUME)
+% uiwait(handles.figure1);
+
+
+% REPLACE_WITH_DASH_DASH- Outputs from this function are returned to the command line.
+function varargout = final_OutputFcn(hObject, eventdata, handles) 
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Get default command line output from handles structure
+varargout{1} = handles.output;
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in start.
+function start_Callback(hObject, eventdata, handles)
+% hObject    handle to start (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+finalstuff(handles)
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in scramble.
+function scramble_Callback(hObject, eventdata, handles)
+% hObject    handle to scramble (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+scramble
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in undo.
+function undo_Callback(hObject, eventdata, handles)
+% hObject    handle to undo (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+rotate(handles)
+
+
+function enter_Callback(hObject, eventdata, handles)
+% hObject    handle to enter (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of enter as text
+%        str2double(get(hObject,'String')) returns contents of enter as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function enter_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to enter (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in undo2.
+function undo2_Callback(hObject, eventdata, handles)
+% hObject    handle to undo2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+rotateoff(handles)
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in R.
+function R_Callback(hObject, eventdata, handles)
+% hObject    handle to R (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+right
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Rp.
+function Rp_Callback(hObject, eventdata, handles)
+% hObject    handle to Rp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+rightp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in L.
+function L_Callback(hObject, eventdata, handles)
+% hObject    handle to L (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+left
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Lp.
+function Lp_Callback(hObject, eventdata, handles)
+% hObject    handle to Lp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+leftp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in F.
+function F_Callback(hObject, eventdata, handles)
+% hObject    handle to F (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+front
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Fp.
+function Fp_Callback(hObject, eventdata, handles)
+% hObject    handle to Fp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+frontp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in B.
+function B_Callback(hObject, eventdata, handles)
+% hObject    handle to B (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+back
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Bp.
+function Bp_Callback(hObject, eventdata, handles)
+% hObject    handle to Bp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+backp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in U.
+function U_Callback(hObject, eventdata, handles)
+% hObject    handle to U (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+top
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Up.
+function Up_Callback(hObject, eventdata, handles)
+% hObject    handle to Up (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+topp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in D.
+function D_Callback(hObject, eventdata, handles)
+% hObject    handle to D (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+bottom
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Dp.
+function Dp_Callback(hObject, eventdata, handles)
+% hObject    handle to Dp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+bottomp
+
+
+
+function colon_Callback(hObject, eventdata, handles)
+% hObject    handle to colon (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of colon as text
+%        str2double(get(hObject,'String')) returns contents of colon as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function colon_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to colon (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in timer.
+function timer_Callback(hObject, eventdata, handles)
+% hObject    handle to timer (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+timerhj(handles)
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in stoptimer.
+function stoptimer_Callback(hObject, eventdata, handles)
+% hObject    handle to stoptimer (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+stoptimerhj(handles)
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in threebythree.
+function threebythree_Callback(hObject, eventdata, handles)
+% hObject    handle to threebythree (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobytwo(handles)
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tf.
+function tf_Callback(hObject, eventdata, handles)
+% hObject    handle to tf (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twofront
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tfh.
+function tfh_Callback(hObject, eventdata, handles)
+% hObject    handle to tfh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twofronth
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tfho.
+function tfho_Callback(hObject, eventdata, handles)
+% hObject    handle to tfho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twofrontho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tfp.
+function tfp_Callback(hObject, eventdata, handles)
+% hObject    handle to tfp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twofrontp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tfph.
+function tfph_Callback(hObject, eventdata, handles)
+% hObject    handle to tfph (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twofrontph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tfpho.
+function tfpho_Callback(hObject, eventdata, handles)
+% hObject    handle to tfpho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twofrontpho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tb.
+function tb_Callback(hObject, eventdata, handles)
+% hObject    handle to tb (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoback
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tbh.
+function tbh_Callback(hObject, eventdata, handles)
+% hObject    handle to tbh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobackh
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tbho.
+function tbho_Callback(hObject, eventdata, handles)
+% hObject    handle to tbho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobackho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tbp.
+function tbp_Callback(hObject, eventdata, handles)
+% hObject    handle to tbp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobackp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tbph.
+function tbph_Callback(hObject, eventdata, handles)
+% hObject    handle to tbph (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobackph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tbpho.
+function tbpho_Callback(hObject, eventdata, handles)
+% hObject    handle to tbpho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobackpho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tr.
+function tr_Callback(hObject, eventdata, handles)
+% hObject    handle to tr (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+tworight
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in trh.
+function trh_Callback(hObject, eventdata, handles)
+% hObject    handle to trh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+tworighth
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in trho.
+function trho_Callback(hObject, eventdata, handles)
+% hObject    handle to trho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+tworightho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in trp.
+function trp_Callback(hObject, eventdata, handles)
+% hObject    handle to trp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+tworightp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in trph.
+function trph_Callback(hObject, eventdata, handles)
+% hObject    handle to trph (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+tworightph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in trpho.
+function trpho_Callback(hObject, eventdata, handles)
+% hObject    handle to trpho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+tworightpho
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tl.
+function tl_Callback(hObject, eventdata, handles)
+% hObject    handle to tl (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoleft
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tlh.
+function tlh_Callback(hObject, eventdata, handles)
+% hObject    handle to tlh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twolefth
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tlho.
+function tlho_Callback(hObject, eventdata, handles)
+% hObject    handle to tlho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoleftho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tlp.
+function tlp_Callback(hObject, eventdata, handles)
+% hObject    handle to tlp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoleftp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tlph.
+function tlph_Callback(hObject, eventdata, handles)
+% hObject    handle to tlph (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoleftph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tlpho.
+function tlpho_Callback(hObject, eventdata, handles)
+% hObject    handle to tlpho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoleftpho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tu.
+function tu_Callback(hObject, eventdata, handles)
+% hObject    handle to tu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twotop
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tuh.
+function tuh_Callback(hObject, eventdata, handles)
+% hObject    handle to tuh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twotoph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tuho.
+function tuho_Callback(hObject, eventdata, handles)
+% hObject    handle to tuho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twotopho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tup.
+function tup_Callback(hObject, eventdata, handles)
+% hObject    handle to tup (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twotopp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tuph.
+function tuph_Callback(hObject, eventdata, handles)
+% hObject    handle to tuph (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twotopph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tupho.
+function tupho_Callback(hObject, eventdata, handles)
+% hObject    handle to tupho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twotoppho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in td.
+function td_Callback(hObject, eventdata, handles)
+% hObject    handle to td (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobottom
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tdh.
+function tdh_Callback(hObject, eventdata, handles)
+% hObject    handle to tdh (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobottomh
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tdho.
+function tdho_Callback(hObject, eventdata, handles)
+% hObject    handle to tdho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobottomho
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tdp.
+function tdp_Callback(hObject, eventdata, handles)
+% hObject    handle to tdp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobottomp
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tdph.
+function tdph_Callback(hObject, eventdata, handles)
+% hObject    handle to tdph (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobottomph
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in tdpho.
+function tdpho_Callback(hObject, eventdata, handles)
+% hObject    handle to tdpho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobottompho
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in twoscramble.
+function twoscramble_Callback(hObject, eventdata, handles)
+% hObject    handle to twoscramble (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twoscramble
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in twobytwo.
+function twobytwo_Callback(hObject, eventdata, handles)
+% hObject    handle to twobytwo (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+twobytwo(handles)
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in threebythreee.
+function threebythreee_Callback(hObject, eventdata, handles)
+% hObject    handle to threebythreee (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+finalstuff(handles)
+
+##### SOURCE END #####
+--></body></html>

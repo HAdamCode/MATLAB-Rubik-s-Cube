@@ -1,0 +1,21 @@
+function tworightpho
+r11 = findobj('Tag','r11');
+r22 = findobj('Tag','r22');
+r33 = findobj('Tag','r33');
+r44 = findobj('Tag','r44');
+r11x=r11.XData;
+r11y=r11.YData;
+r11z=r11.ZData;
+r22x=r22.XData;
+r22y=r22.YData;
+r22z=r22.ZData;
+r33x=r33.XData;
+r33y=r33.YData;
+r33z=r33.ZData;
+r44x=r44.XData;
+r44y=r44.YData;
+r44z=r44.ZData;
+r11.FaceAlpha = 1;
+r22.FaceAlpha = 1;
+r33.FaceAlpha = 1;
+r44.FaceAlpha = 1;

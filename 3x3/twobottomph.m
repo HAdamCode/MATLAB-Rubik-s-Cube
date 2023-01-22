@@ -1,0 +1,21 @@
+function twobottomph
+d11 = findobj('Tag','d11');
+d22 = findobj('Tag','d22');
+d33 = findobj('Tag','d33');
+d44 = findobj('Tag','d44');
+d11x=d11.XData;
+d11y=d11.YData;
+d11z=d11.ZData;
+d22x=d22.XData;
+d22y=d22.YData;
+d22z=d22.ZData;
+d33x=d33.XData;
+d33y=d33.YData;
+d33z=d33.ZData;
+d44x=d44.XData;
+d44y=d44.YData;
+d44z=d44.ZData;
+d11.FaceAlpha = .8;
+d22.FaceAlpha = .8;
+d33.FaceAlpha = .8;
+d44.FaceAlpha = .8;

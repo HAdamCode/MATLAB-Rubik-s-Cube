@@ -1,0 +1,21 @@
+function twobackho
+b11 = findobj('Tag','b11');
+b22 = findobj('Tag','b22');
+b33 = findobj('Tag','b33');
+b44 = findobj('Tag','b44');
+b11x=b11.XData;
+b11y=b11.YData;
+b11z=b11.ZData;
+b22x=b22.XData;
+b22y=b22.YData;
+b22z=b22.ZData;
+b33x=b33.XData;
+b33y=b33.YData;
+b33z=b33.ZData;
+b44x=b44.XData;
+b44y=b44.YData;
+b44z=b44.ZData;
+b11.FaceAlpha = 1;
+b22.FaceAlpha = 1;
+b33.FaceAlpha = 1;
+b44.FaceAlpha = 1;
